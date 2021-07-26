@@ -24,7 +24,71 @@ The HTML and JS looks like this
 ```
 
 ```js
+import { LightningElement, track, api } from 'lwc';
+
 export default class ChildComponent extends LightningElement {
     @api username;
+}
+```
+
+## From child-to-parent
+
+Child to parent communication involves using Events. Example is shown below - 
+
+#### Parent Component
+
+The HTML and JS looks like this
+
+```html
+<template>
+    <lightning-card  title="Parent Component">
+        <c-child-component username="John Doe" onchild={handleChild}></c-child-component>
+        <p style="padding-left: 1rem;">Phone number: {childnumber}</p>
+    </lightning-card>
+</template>
+```
+
+```js
+import { LightningElement, track } from 'lwc';
+
+export default class ParentComponent extends LightningElement {
+
+    @track childnumber;
+
+    handleChild(event) {
+        this.childnumber = event.detail.childnumber;
+    }
+
+}
+```
+
+#### Child Component 
+
+The HTML and JS looks like this - 
+
+```html
+<template>
+    <div style="background-color: #D3D3D3">
+        <lightning-card title="Child Component">
+            <div style="padding-left: 2rem;">Welcome, {username}</div>
+            <br />
+            <a style="padding-left: 2rem;" onclick={clickbutton}>Click here to get phone number</a>
+        </lightning-card>
+    </div>
+</template>
+```
+
+```js
+import { LightningElement, track, api } from 'lwc';
+
+export default class ChildComponent extends LightningElement {
+    @api username;
+
+    clickbutton() {
+        const event = new CustomEvent('child', {
+            detail: { "childnumber": "+1-214-xxx-xxxx" }
+        });
+        this.dispatchEvent(event);
+    }
 }
 ```
