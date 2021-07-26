@@ -1,5 +1,10 @@
 ## From parent-to-child
 
+Read more on this [here](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.events_create_dispatch)
+<br/>
+Also refer to [this](https://medium.com/salesforce-champion/lwc-way-to-pass-the-data-between-component-parent-to-child-and-child-to-parent-component-6d8070ef4185)
+
+
 #### Parent Component
 
 The HTML looks like this
