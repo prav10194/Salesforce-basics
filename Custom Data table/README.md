@@ -6,6 +6,11 @@
 ![image](https://user-images.githubusercontent.com/8276139/132521030-e4b276f2-d69f-4f09-8e32-ac83ac68fe2e.png)
 ![image](https://user-images.githubusercontent.com/8276139/132521071-eb21e172-488c-411e-bc24-b6853ab5c875.png)
 
+#### Output View
+
+![image](https://user-images.githubusercontent.com/8276139/132521648-4b666e00-22b3-498b-a980-586117d5cf1c.png)
+
+
 #### Components - 
 
 HTML (main parent component) **testlwc.html** - 
