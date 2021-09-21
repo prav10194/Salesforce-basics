@@ -24,7 +24,7 @@ export default class Testlwc extends OmniscriptBaseMixin(LightningElement) {
     }
     
     updateChildComponent = () => {
-        **this.template.querySelector('c-test-child-component').childfunction([4,3,2,1]);**
+      this.template.querySelector('c-test-child-component').childfunction([4,3,2,1]);
     }
 }
 ```
@@ -46,9 +46,9 @@ export default class TestChildComponent extends OmniscriptBaseMixin(LightningEle
     @api childdata;
     @track childdata;
 
-    **@api 
+    @api 
     childfunction(parentdata){
         this.childdata = parentdata
-    }**
+    }
 }
 ```
