@@ -1,10 +1,8 @@
 ## Common errors in Vlocity and Salesforce
 
-```diff
-- 1. This page has an error. You might just need to refresh it. [this.childInput.checkValidity is not a function] Failing descriptor: {markup://vlocity_cmt:omniscriptValidation}
+1. This page has an error. You might just need to refresh it. [this.childInput.checkValidity is not a function] Failing descriptor: {markup://vlocity_cmt:omniscriptValidation}
 
-+ Resolution: Remove the default code and update the js file with this - 
-```
+Resolution: Remove the default code and update the js file with this - 
 
 ```js
 import { LightningElement, api, wire, track } from "lwc";
