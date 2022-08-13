@@ -7,7 +7,7 @@
 - FlexCards are built quickly using drag-and-drop elements.
 - FlexCards have a what-you-see-is-what-you-get (WYSIWYG) editor for controlling their layout and style.
 - FlexCard actions are relevant to the context of the card.
-- FlexCards are embeddable in other FlexCards. **We can create child flexcards. **
+- FlexCards are embeddable in other FlexCards. <b>We can create child flexcards. </b>
 - FlexCards are embeddable inside an LWC OmniScript.
 - FlexCards display more detail on demand with flyouts.
-- FlexCards have multiple states that display based on conditions. **We can create conditions which decides which flex card to render. **
+- FlexCards have multiple states that display based on conditions. <b>We can create conditions which decides which flex card to render. </b>
