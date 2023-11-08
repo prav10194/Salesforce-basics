@@ -21,3 +21,15 @@ export default class Timerlwc extends LightningElement {
     Enter your name: <input type="text" style="background-color: white; " onkeyup = {changeHandler}>{fullName}
 </template>
 ```
+
+<b>Getters: </b>The above example for data binding doesn't support any operations on the template (for e.g. multiplying, modifying the string). In this case we can create a getter function that will return the value after modifications. 
+
+```javascript
+get updateName(){
+    return this.fullName.toUpperCase()
+    }
+```
+
+```html
+Enter your name: <input type="text" style="background-color: white; " onkeyup = {changeHandler}>{updateName}
+```
