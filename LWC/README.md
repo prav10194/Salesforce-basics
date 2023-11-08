@@ -1,12 +1,5 @@
-## Creating LWC using CMD
+## LWC Basics
 
-``cmd
-cd <folder_path_to_lwc>
-sfdx force:lightning:component:create --type lwc -n helloWorld
-``
+<b>How is it different than Aura? </b>Since the introduction of new standards and web frameworks in 2019, LWC made it easier to create UI components, as it is built directly on the Web stack. Also, LWCs are easier to deploy. 
 
-## Open an org
-
-``cmd
-sfdx force:org:open
-``
+<b>
