@@ -2,7 +2,7 @@
 
 <b>How is it different than Aura? </b>Since the introduction of new standards and web frameworks in 2019, LWC made it easier to create UI components, as it is built directly on the Web stack. Also, LWCs are easier to deploy. 
 
-<b>Data binding: </b>Synchronization between controller (JS) and template (HTML). 
+<b>Data binding: </b>Synchronization between the controller (JS) and template (HTML). 
 
 ```javascript
 import { LightningElement, track } from 'lwc';
@@ -22,7 +22,7 @@ export default class Timerlwc extends LightningElement {
 </template>
 ```
 
-<b>Getters: </b>The above example for data binding doesn't support any operations on the template (for e.g. multiplying, modifying the string). In this case we can create a getter function that will return the value after modifications. 
+<b>Getters: </b>The above example for data binding doesn't support any operations on the template (e.g. multiplying, or modifying the string). In this case, we can create a getter function that will return the value after modifications. 
 
 ```javascript
 get updateName(){
@@ -32,4 +32,30 @@ get updateName(){
 
 ```html
 Enter your name: <input type="text" style="background-color: white; " onkeyup = {changeHandler}>{updateName}
+```
+
+<b>Conditional Rendering: </b>
+
+```javascript
+export default class Timerlwc extends LightningElement {
+    message = "Success"
+
+    isVisible = false
+
+    displayMessage = (event) => {
+        this.isVisible = true
+    }
+
+}
+```
+
+```html
+<template>
+    <button onclick={displayMessage}>
+        Check message
+    </button>
+    <div if:true={isVisible}>
+        {message}
+    </div>
+</template>
 ```
