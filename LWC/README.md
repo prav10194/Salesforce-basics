@@ -59,3 +59,49 @@ export default class Timerlwc extends LightningElement {
     </div>
 </template>
 ```
+
+<b>Advanced conditioning: </b>
+
+```javascript
+export default class Timerlwc extends LightningElement {
+    
+    @track element = "D"
+
+    get displayA(){
+        if (this.element === "A"){
+            return true
+        }
+    }
+    get displayB(){
+        if (this.element === "B"){
+            return true
+        }
+    }
+    get displayC(){
+        if (this.element === "C"){
+            return true
+        }
+    }
+
+}
+```
+
+```html
+<template>
+    <button onclick={displayMessage}>
+        Check message
+    </button>
+    <div lwc:if={displayA}>
+        Displaying A
+    </div>
+    <div lwc:elseif={displayB}>
+        Displaying B
+    </div>
+    <div lwc:elseif={displayC}>
+        Displaying C
+    </div>
+    <div lwc:else>
+        Displaying D
+    </div>
+</template>
+```
