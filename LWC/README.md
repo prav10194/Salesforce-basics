@@ -105,3 +105,34 @@ export default class Timerlwc extends LightningElement {
     </div>
 </template>
 ```
+
+<b>Decorators: </b>We have three types of decorators available: 
+<br/>1. @api: To expose a public property, decorate a field with @api. A simple example would be updating a property of a child component from a parent component would need an @api decorator, else it will display the default value. 
+
+<b><i>Parent LWC</b></i>
+
+```html
+<template>
+    <c-child-l-w-c header-label="Hey! Im changed"></c-child-l-w-c>
+</template>
+```
+
+<b><i>Child LWC</b></i>
+
+```html
+<template>
+  <div  class="label-class">
+    <h1>{headerLabel}</h1>
+  </div>
+</template>
+```
+
+```javascript
+import { LightningElement, api } from  'lwc';
+
+export  default  class  ChildLWC extends  LightningElement {
+    @api headerLabel = 'This Label is from ChildComp.js';
+}
+```
+
+This would display "Hey! Im changed". If property was not prefixed by @api - it would have displayed "This Label is from ChildComp.js"
