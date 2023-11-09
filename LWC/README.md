@@ -180,3 +180,6 @@ export default class ApexWireDemo extends LightningElement {
     accounts
 }
 ```
+
+<b>Lifecycle hook: </b>
+<br/>There are 3 phases: <br/>1. Mounting Phase <br/>2. Unmounting Phase <br/>3. Error Phase
