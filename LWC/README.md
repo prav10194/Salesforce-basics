@@ -118,6 +118,10 @@ export default class Timerlwc extends LightningElement {
 </template>
 ```
 
+<b><i>Note: </i></b>Notice how the child component is called from parent. The pattern to create the html tag for child has a few rules: 
+* prefixed by c-
+* Uppercase letters are prefixed by -lowercaseletter. For example, ChildLWC  becomes <c-child-l-w-c>
+
 <b><i>Child LWC</b></i>
 
 ```html
@@ -137,3 +141,42 @@ export  default  class  ChildLWC extends  LightningElement {
 ```
 
 This would display "Hey! Im changed". If property was not prefixed by @api - it would have displayed "This Label is from ChildComp.js"
+
+<br/><br/><b>2. @wire: </b>Components use @wire in their JavaScript class to specify a wire adapter or an Apex method. A simple example of reading account fields extracted in Apex controller and sending it to LWC. 
+
+<i>Apex class</i>
+<br/>Do note that the classes should be either public/global and prefixed with @AuraEnabled. cacheable=true ensures a method must only get data. It can’t mutate data.
+
+```java
+public with sharing class AccountController {
+    @AuraEnabled(cacheable=true)
+    public static List<Account> getAccountList(){
+        return [SELECT Id, Name, Type, Industry from Account LIMIT 5];
+    }
+}
+```
+
+<i>LWC files</i>
+
+```html
+<template>
+    <template if:true={accounts.data}>
+        <template for:each={accounts.data} for:item="account">
+            <div key={account.Id}>
+                <p>{account.Name} and {account.Industry} and {account.Type}</p>
+            </div>
+        </template>
+    </template>
+</template>
+```
+
+```javascript
+import { LightningElement, wire } from 'lwc';
+import getAccountList from '@salesforce/apex/AccountController.getAccountList';
+
+
+export default class ApexWireDemo extends LightningElement {
+    @wire(getAccountList)
+    accounts
+}
+```
