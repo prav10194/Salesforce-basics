@@ -105,7 +105,8 @@ export default class Timerlwc extends LightningElement {
     </div>
 </template>
 ```
-
+<br/>
+<br/>
 <b>Decorators: </b>We have three types of decorators available: 
 <br/>1. @api: To expose a public property, decorate a field with @api. A simple example would be updating a property of a child component from a parent component would need an @api decorator, else it will display the default value. 
 
