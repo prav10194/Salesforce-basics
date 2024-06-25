@@ -10,6 +10,8 @@
 
 4. Now its time to create your first project in VSCode. To Create the project open Command Palette or press Ctrl + Shift + P.  Then type SFDX: Create Project with Manifest.
 
+5. Before running the next command, do install Salesforce CLI - https://developer.salesforce.com/tools/salesforcecli?&_ga=2.88625819.1471703872.1719249534-659990064.1713812998#
+
 5. Connect your VSCode with Salesforce. Again open Command Palette or press Ctrl + Shift + P. This time we need to type or Select “SFDX: Authorize an Org“. (Select Sandbox if it's a test env)
 
 ## Setting up package.xml to retrieve components
