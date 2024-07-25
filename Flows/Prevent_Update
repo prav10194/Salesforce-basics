@@ -1,0 +1,7 @@
+# Preventing from updating status field if record is older then 30 days.
+
+AND(
+ISCHANGED(Status),
+NOT(ISBLANK(CreatedDate)),
+DATEVALUE(CreatedDate) <= (TODAY() - 30)
+)
